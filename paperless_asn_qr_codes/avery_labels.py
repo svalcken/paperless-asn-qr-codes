@@ -110,6 +110,15 @@ labelInfo: dict[str, LabelInfo] = {
         margin=(11.02 * mm, 13.06 * mm),
         pagesize=A4,
     ),
+    # HERMA No. 10916 labels Test
+    "herma10916": LabelInfo(
+        labels_horizontal=7,
+        labels_vertical=16,
+        label_size=(25.36 * mm, 16.93 * mm),
+        gutter_size=(2.54 * mm, 0),
+        margin=(11.02 * mm, 13.06 * mm),
+        pagesize=A4,
+    ),
     "herma4346": LabelInfo(
         labels_horizontal=4,
         labels_vertical=12,
