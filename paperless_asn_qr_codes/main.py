@@ -52,8 +52,8 @@ def main():
     parser.add_argument(
         "--digits",
         "-d",
-        default=7,
-        help="Number of digits in the ASN (default: 7, produces 'ASN0000001')",
+        default=9,
+        help="Number of digits in the ASN (default: 9, produces 'ASN000000001')",
         type=int,
     )
     parser.add_argument(
