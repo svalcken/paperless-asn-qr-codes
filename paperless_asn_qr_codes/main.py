@@ -12,14 +12,21 @@ def render(c, _, y):
     """ Render the QR code and ASN number on the label """
     global startASN
     global digits
+    global year
+    global sn
+    
     barcode_value = f"ASN{startASN:0{digits}d}"
     startASN = startASN + 1
 
+    if strsplit := re.match(r"^ASN(\d{4})(\d*)$", barcode_value):
+        year := strsplit.group(1)
+        sn := strsplit.group(2)
+    
     qr = QRCodeImage(barcode_value, size=y * 0.9)
     qr.drawOn(c, 1 * mm, y * 0.05)
     c.setFont("Helvetica", 2 * mm)
-    c.drawString(y, (y - 2 * mm) / 2, barcode_value)
-
+    #c.drawString(y, (y - 2 * mm) / 2, barcode_value)
+    c.drawString(y, (y - 2 * mm) / 2, year + "\n" + sn)
 
 def main():
     """ Main function for the paperless ASN QR code generator """
